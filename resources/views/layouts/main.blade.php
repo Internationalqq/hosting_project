@@ -10,91 +10,94 @@
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
-    <!-- Фиксированный сайдбар -->
-    <nav class="sidebar">
-        <h4 class="ms-3 text-primary fw-bold"><i class="bi bi-shop-window"></i> OrdersHub</h4>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-house me-2 fa-lg"></i>
-                    Главная
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark active" href="{{ route('order.index') }}">
-                    <i class="bi bi-shop-window me-2 fa-lg"></i>
-                    Заказы
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="{{ route('sale.index') }}">
-                    <i class="bi bi-stack me-2 fa-lg"></i>
-                    Продажи
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-box me-2 fa-lg"></i>
-                    Склад
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-file-earmark-text me-2 fa-lg"></i>
-                    Прайсы
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-cart me-2 fa-lg"></i>
-                    Корзина
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-wallet me-2 fa-lg"></i>
-                    Финансы
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-bar-chart me-2 fa-lg"></i>
-                    Аналитика
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">
-                    <i class="bi bi-info-circle me-2 fa-lg"></i>
-                    Справочники
-                </a>
-            </li>
-        </ul>
+    <div class=''>
+        <!-- Фиксированный сайдбар -->
+        <nav class="sidebar">
+            <h4 class="ms-3 text-primary fw-bold"><i class="bi bi-shop-window"></i> OrdersHub</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-house me-2 fa-lg"></i>
+                        Главная
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark active" href="{{ route('order.index') }}">
+                        <i class="bi bi-shop-window me-2 fa-lg"></i>
+                        Заказы
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{ route('sale.index') }}">
+                        <i class="bi bi-stack me-2 fa-lg"></i>
+                        Продажи
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-box me-2 fa-lg"></i>
+                        Склад
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-file-earmark-text me-2 fa-lg"></i>
+                        Прайсы
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-cart me-2 fa-lg"></i>
+                        Корзина
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-wallet me-2 fa-lg"></i>
+                        Финансы
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-bar-chart me-2 fa-lg"></i>
+                        Аналитика
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">
+                        <i class="bi bi-info-circle me-2 fa-lg"></i>
+                        Справочники
+                    </a>
+                </li>
+            </ul>
 
-        <!-- Информация о пользователе -->
-        <div class="user-info">
-            <p>
-                <a href="#" class="nav-link p-0">
-                    <i class="bi bi-gear-fill me-2 fa-lg"></i>
-                    Найстроки
-                </a>
-            </p>
-            <p>
-                <a href="{{ route('profile.index') }}" class="nav-link p-0">
-                    <i class="bi bi-person me-2 fa-lg"></i>
-                    {{ Auth::user()->name }} <!-- Здесь можно использовать переменную с именем пользователя -->
-                </a>
-            </p>
-        </div>
-    </nav>
+            <!-- Информация о пользователе -->
+            <div class="user-info">
+                <p>
+                    <a href="#" class="nav-link p-0">
+                        <i class="bi bi-gear-fill me-2 fa-lg"></i>
+                        Найстроки
+                    </a>
+                </p>
+                <p>
+                    <a href="{{ route('profile.index') }}" class="nav-link p-0">
+                        <i class="bi bi-person me-2 fa-lg"></i>
+                        {{ Auth::user()->name }} <!-- Здесь можно использовать переменную с именем пользователя -->
+                    </a>
+                </p>
+            </div>
+        </nav>
 
-    <!-- Основное содержимое -->
-    <div class="content">
-        <div class="container-fluid">
-            @yield('content')
+        <!-- Основное содержимое -->
+        <div class="content">
+            <div class="container-fluid">
+                @yield('content')
+            </div>
         </div>
     </div>
 
