@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -31,5 +32,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Contractor'], function () {
 Route::get('/sales', [SalesController::class, 'index'])->name('sale.index')->middleware('auth');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
+
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
 
 Auth::routes();
